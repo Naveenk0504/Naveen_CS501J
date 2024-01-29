@@ -1,0 +1,133 @@
+1. Easy: Understanding Bubble SortManually sort the array ` [0,8, 6, 1] ` using the bubble sort technique.
+ writedown each step of the process.
+a)
+   given array is [ 0, 8 , 6 , 1 ]
+   lets apply Bubble sort algorithm 
+   now the index of given array is starts from 0 to 3 because the size of array is 4 .
+   step1 : 
+            > Compare 0 and 8,here "8" is greather than "0" no swap: [0, 8, 6, 1]
+            > Compare 8 and 6, swap because 8 > 6: [0, 6, 8, 1]
+            > Compare 8 and 1, swap because 8 > 1: [0, 6, 1, 8]
+   after one loop now the array is [0,6,1,8]
+   step2 :
+           > Compare 0 and 6,here "6" is greather than "0" no swap: [0, 6, 1, 8]
+           > Compare 6 and 1, swap because 6 > 1: [0, 1, 6, 8]
+   step3 :
+           > Compare 0 and 1, no swap: [0, 1, 6, 8]
+           > Compare 1 and 6, no swap: [0, 1, 6, 8]
+           > Compare 6 and 8, no swap: [0, 1, 6, 8]
+  .'. After applying Bubble Sort algorithm the array is in assending order .
+
+2. Intermediate: Trace the Bubble SortProvided the unsorted array ` [90,80,70,60,50] ` and trace the bubble sort algorithmstep by step, 
+   showing the changes in the array after each pass.
+A)
+    given array is [90,80,70,60,50]
+    lets apply Bubble sort algorithm 
+    now the index of given array is starts from 0 to 4 because the size of array is 5 .
+   step1 : 
+           > Compare 90 and 80, swap because 90 is greater than 80: [80, 90, 70, 60, 50]
+           > Compare 90 and 70, swap because 90 > 70: [80, 70, 90, 60, 50]
+           > Compare 90 and 60, swap because 90 is greater than 60: [80, 70, 60, 90, 50]
+           > Compare 50 and 10, swap because 50 > 10: [40, 30, 20, 10, 50]
+     after first loop now the given array is [80, 70, 60, 50, 90].
+
+   step2 :
+          > Compare 80 and 70, swap because 80 > 70: [70, 80, 60, 50, 90]
+          > Compare 80 and 60, swap because 80 is greater than 60: [70, 60, 80, 50, 90]
+          > Compare 40 and 10, swap because 40 > 10: [30, 20, 10, 40, 50]
+     after second loop now the given array is [70, 60, 50, 80, 90].
+
+   step3 :
+           > Compare 70 and 60, swap because 70 is greater than 60: [60, 70, 50, 80, 90]
+           > Compare 70 and 50, swap because 70 > 50: [60, 50, 70, 80, 90]
+    after third loop now the given array is [60, 50, 70, 80, 90].
+
+   step4 :
+           > Compare 60 and 50, swap because 60 is greater than 50: [50, 60, 70, 80, 90]
+   .'. After applying Bubble Sort algorithm the array is in assending order .
+
+3. Intermediate: Code ImplementationImplement the bubble sort algorithm in C++.
+   Provide them with the following unsorted array: [3, 9, 2, 7, 4] . 
+   Code from scratch and test it to ensure it works correctly
+A)
+    Given array [3, 9, 2, 7, 4] 
+     Code in C++ :
+                   #include <iostream>
+                   using namespace std;
+
+                   int main()
+                        {
+                             int arr[] = {3, 9, 2, 7, 4};
+                             int n = sizeof(arr) / sizeof(arr[0]);
+                             for(int i = 0; i < n-1; i++)
+                                  {
+                                        for (int j = 0; j < n-i-1; j++)
+                                                  {
+           
+                                                     if (arr[j] > arr[j+1])
+                                                          {
+                                                            int temp = arr[j];
+                                                            arr[j] = arr[j+1];
+                                                            arr[j+1] = temp;
+                                                           }
+                                                    }
+                                    }
+                             cout << "Sorted array: \n";
+                             for(int i = 0; i < n; i++)
+                            cout << arr[i] << " ";
+                             return 0;
+                         }
+
+  .'. The output of the given array is [2, 3, 4, 7, 9].
+
+ 4. Advanced: Optimization Challenge yourself to optimize the bubble sort algorithm. 
+    Provided with the partially sorted array ` [1, 7, 3, 9, 5, 10, 4, 8, 2, 6] `. 
+    Optimize the algorithm toreduce the number of comparisons or swaps, making the sorting process moreefficient.
+A).
+      Given array [1, 7, 3, 9, 5, 10, 4, 8, 2, 6] 
+     Code in C++ :
+                   #include <iostream>
+                   using namespace std;
+
+                   int main()
+                        {
+                             int arr[] = {1, 7, 3, 9, 5, 10, 4, 8, 2, 6};
+                             int n = sizeof(arr) / sizeof(arr[0]);
+                             for(int i = 0; i < n-1; i++)
+                                  {
+                                        for (int j = 0; j < n-i-1; j++)
+                                                  {
+           
+                                                     if (arr[j] > arr[j+1])
+                                                          {
+                                                            int temp = arr[j];
+                                                            arr[j] = arr[j+1];
+                                                            arr[j+1] = temp;
+                                                           }
+                                                    }
+                                    }
+                             cout << "Sorted array: \n";
+                             for(int i = 0; i < n; i++)
+                            cout << arr[i] << " ";
+                             return 0;
+                         }
+
+  .'. The output of the given array is [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].
+
+5. Advanced: Comparison with Other Sorting Algorithms Compare the bubble sort algorithm with quicksort and mergesort. 
+   Discuss the advantages and disadvantages of bubble sort in different scenarios.
+   Additionally,analyze when it might be preferable to use other sorting algorithms.
+A). 
+   Bubble sort, quicksort, and mergesort are all sorting algorithms that differ in their time-based complexity.
+   Bubble Sort is simple to learn and implement. It's used for short data sets.
+
+   Quick sort has an average time complexity of O(n log n), making it more efficient than bubble sort for large datasets. 
+   However, it has the worst time complexity and may not be appropriate for large data sets.
+
+   Mergesort is ideal for sorting linked lists as it eliminates the need for random access to elements. 
+   However, it has a higher space complexity than other sorting algorithms.
+
+
+
+
+
